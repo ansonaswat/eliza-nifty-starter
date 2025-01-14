@@ -1,13 +1,5 @@
 # eliza-nifty-starter
 
----
-slug: "/agents/tutorials/ai16z"
-sidebar_custom_props:
-  myEmoji: 🙆‍♀️
----
-
-# ai16z Integration
-
 ### Overview
 ai16z has quickly become one of the most popular and powerful agentic creation frameworks.
 
