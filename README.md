@@ -1,9 +1,9 @@
-# eliza-nifty-starter
+# Eliza x Nifty Starter
 
 ### Overview
-ai16z has quickly become one of the most popular and powerful agentic creation frameworks.
+Eliza (ai16z) has quickly become one of the most popular and powerful agentic creation frameworks.
 
-The repository can be found [here](https://github.com/gtspencer/eliza-starter-nifty-action-example), and is a forked version of the elizaOS starter, but this tutorial will walk through the setup from scratch.
+The Nifty integration repository can be found [here](https://github.com/gtspencer/eliza-nifty-starter), and is a forked version of the elizaOS starter, but this tutorial will walk through the setup from scratch.
 
 ## Quick start
 Clone the [elizaOS starter](https://github.com/elizaOS/eliza-starter) from the Eliza github account.  This is a lightweight, packaged version of the [Eliza source code](https://github.com/elizaOS/eliza).
@@ -18,10 +18,10 @@ Your agent is now running at `http://localhost:3000/${agentId}/message`.  You ca
 
 Once deployed, you will have the endpoint with which you can interface with the agent remotely.  This will be the URL to input into Nifty when configuring your agent.
 
-The response format that ai16z uses is already compatible with the Nifty agent standard.  No further work is needed to bring it in line with the standard.
+The response format that Eliza uses is already compatible with the Nifty agent standard.  No further work is needed to bring it in line with the standard.
 
 ## Actions
-ai16z makes it exceedingly simple to create [new actions](https://elizaos.github.io/eliza/docs/core/actions/).  Below is an example action "HOSTLOBBY", which opens up a new lobby in Nifty Island.  It *does not* include implementation for action contexts, nor is it relatively robust; it merely serves as an example on how to implement a new action in ai16z.
+Eliza makes it exceedingly simple to create [new actions](https://elizaos.github.io/eliza/docs/core/actions/).  Below is an example action "HOSTLOBBY", which opens up a new lobby in Nifty Island.  It *does not* include implementation for action contexts, nor is it relatively robust; it merely serves as an example on how to implement a new action in Eliza.
 
 The action is placed in its own file, titled `hostLobby.ts`.  It describes a `name`, which is the action string passed in the agent's response, followed by `similes`, which effectively act as action aliases.  Next, it describes a description that is passed to the agent as a prompt; this prompt should be descriptive and unambiguous.
 
@@ -138,6 +138,19 @@ This implementation is a basic one; it does not account for action contexts (i.e
 
 ## Customizations
 ai16z provides a solid framework for creating agents and actions.  Explore their [Eliza source code](https://github.com/elizaOS/eliza) to add new custom actions or modify your agent in any way.  These actions can be within the Nifty action space, or be an external action to be carried out locally by your agent.
+
+## Deployment
+Eliza can be deployed on any hosting platforms.  For this demo, we will be using Railway, as they make it fast and simple.
+
+First, create a railway account, and connect to the Github account where the repo is located.  Select New Project in Railway, and link the relevant Github repo.
+
+Next, fill out the environment variables.  You are able to copy and paste directly from your `.env` file and paste it directly in the config.
+
+In the `Settings` tab, scroll down to the `Build` section, and ensure Node is present.  Add Python to this section as well.
+
+Set the `Custom Build Command` to `pnpm build`, and the `Custom Start Command` to `pnpm start`.
+
+Now hit deploy!  Once completed, open the settings again and click `Generate Domain`.  This will be the domain that we will hit from game.  When configuring your agent in game, remember to include the url, appended with the agent name, and `/message` (ex: `agentDomain.com/eliza/message).
 
 ## Troubleshooting
 If you have trouble installing dependencies and running the agent, perform the following steps:
