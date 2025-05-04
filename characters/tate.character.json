@@ -1,7 +1,7 @@
 {
   "name": "tate",
   "clients": [],
-  "modelProvider": "grok",
+  "modelProvider": "openai",
   "settings": {
       "secrets": {},
       "voice": {
