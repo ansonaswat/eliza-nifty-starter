@@ -2,7 +2,7 @@
   "name": "Eliza",
   "plugins": [],
   "clients": [],
-  "modelProvider": "openai",
+  "modelProvider": "grok",
   "settings": {
     "secrets": {},
     "voice": {
